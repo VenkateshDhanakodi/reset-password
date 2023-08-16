@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#signUpLogin{
+  background-color: hsl(134, 21%, 60%);
+  height: 100vh;
+}
+
+#signInLogiButton{
+  height: 50vh;
+}
+
+.selected-student {
+  background-color: #d4edda; /* Change the background color as needed */
+  color: #155724; /* Change the text color as needed */
+}
