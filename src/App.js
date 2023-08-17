@@ -12,7 +12,7 @@ import ForgetPassword from './Components/ForgetPassword';
 import ResetPasswordPage from './Components/ResetPasswordPage';
 import './App.css';
 
-export const port = 'https://reset-password-iwly.onrender.com';
+export const port = 'http://localhost:8000';
 
 function App() {
   return (

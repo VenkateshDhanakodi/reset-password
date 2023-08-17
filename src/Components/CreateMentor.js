@@ -15,7 +15,7 @@ function CreateMentor() {
         mentorName: name,
         email: email
       });
-      navigate('/mentor-dashboard');
+      navigate('dahsboard/mentor-dashboard');
     }
     catch (err) {
       console.error("Error assigning student:", err);
