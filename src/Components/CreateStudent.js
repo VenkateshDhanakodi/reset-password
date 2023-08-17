@@ -15,7 +15,7 @@ function CreateStudent() {
         studentName: name,
         email: email
       });
-      navigate('dashboard/student-dashboard');
+      navigate('/dashboard/student-dashboard');
     }
     catch (err) {
       console.error("Error assigning student:", err);
