@@ -11,8 +11,10 @@ const ResetPasswordRouting = () => {
     useEffect(() => {
         const tokenResponse = async () => {
             try {
+                console.log(token);
                 const response = await axios.get(`${port}/reset-password/${token}`);
-                // Checking if the status code is 200 (OK) then navigating to Login page for Logging In
+                console.log(response);
+                // Checking if the status code is 200 (OK) then navigating to Update password page for updating password
                 if (response.status === 200) {
                     navigate(`/updatePassword/${token}`);
                 } else {
