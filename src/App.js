@@ -10,6 +10,7 @@ import SignUp from './Components/SignUp';
 import LogIn from './Components/LogIn';
 import ForgetPassword from './Components/ForgetPassword';
 import ResetPasswordPage from './Components/ResetPasswordPage';
+import ResetPasswordRouting from './Components/ResetPasswordRouting';
 import './App.css';
 
 export const port = 'https://reset-password-iwly.onrender.com';
@@ -23,7 +24,8 @@ function App() {
           <Route path='/signUp' element={<SignUp />} />
           <Route path='/logIn' element={<LogIn />} />
           <Route path='/forgotPassword' element={<ForgetPassword />} />
-          <Route path='/reset-password/:token' element={<ResetPasswordPage />} />
+          <Route path='/reset-password/routing/:token' element={<ResetPasswordRouting />} />
+          <Route path='/updatePassword/:token' element={<ResetPasswordPage />} />
           <Route path='/dashboard/*' element={<DashboardRoutes />} />
         </Routes>
       </BrowserRouter>

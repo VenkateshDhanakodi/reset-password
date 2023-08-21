@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { port } from '../App';
@@ -10,6 +10,30 @@ function ResetPasswordPage() {
     const navigate = useNavigate();
     const { token } = useParams();
     const [password, setPassword] = useState('');
+
+    useEffect(() => {
+        // Check if token is undefined or empty
+        if (!token) {
+            return navigate('/invalidToken');
+        }
+    }, [token, navigate]);
+
+
+    // Check if token is undefined or empty
+    if (!token) {
+        return (
+            <div id="content-wrapper" className="d-flex flex-column">
+                <div id="content">
+                    <div className="container-fluid">
+                        <div className="d-sm-flex align-items-center justify-content-center mb-4" style={{ textAlign: 'center' }}>
+                            <h1 className="h3 mb-0 text-gray-800">Invalid Token</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+    
     const handleResetPassword = async () => {
 
         try {
@@ -17,7 +41,7 @@ function ResetPasswordPage() {
                 token: token,
                 newPassword: password
             });
-
+            console.log(response);
             // Checking if the status code is 200 (OK) then navigating to Login page for Logging In
             if (response.status === 200) {
                 toast.success(response.data.message);
